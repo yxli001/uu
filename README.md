@@ -40,6 +40,11 @@ IMPORTANT: make sure you do NOT remove anything from `.gitignore`. The `.gitigno
 
 This section describes various CLI commands to run parts of the project, such as the backend, frontend, linting, etc. In general, you will be running the backend and frontend together from two separate terminal windows while developing/testing. All of these commands assume that you are currently in the root directory of the project.
 
+### Clone the project
+
+1. `git clone https://github.com/yxli001/uu.git`
+2. `cd uu`
+
 ### Backend
 
 1. `cd backend` to enter the backend directory
