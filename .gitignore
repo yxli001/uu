@@ -8,7 +8,7 @@ lerna-debug.log*
 .pnpm-debug.log*
 
 # Certificate files
-# **/*.pem
+**/*.pem
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -76,7 +76,7 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variable files
-# .env
+.env
 .env.development.local
 .env.test.local
 .env.production.local
