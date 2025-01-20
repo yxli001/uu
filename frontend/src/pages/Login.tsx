@@ -57,7 +57,7 @@ const Login = () => {
           </div>
         </form>
 
-        <p className="w-full text-center border-b border-b-text-100 leading-[0.1em] my-12">
+        <p className="w-full text-center border-b border-b-text-100 leading-[0.1em] my-8">
           <span className="bg-white px-3 text-text-400">or</span>
         </p>
 
