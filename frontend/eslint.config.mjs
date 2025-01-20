@@ -35,6 +35,7 @@ export default tseslint.config(
       "import/no-nodejs-modules": "warn",
       "import/no-unresolved": "off",
       "import/order": "warn",
+      "import/named": "off",
     },
   },
   { settings: { react: { version: "detect" } } },
