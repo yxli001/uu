@@ -1,3 +1,163 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --text-default: #0b111e;
+    --text-50: #ecf0f8;
+    --text-100: #dae1f1;
+    --text-200: #b5c3e3;
+    --text-300: #8fa6d6;
+    --text-400: #6a88c8;
+    --text-500: #456aba;
+    --text-600: #375595;
+    --text-700: #294070;
+    --text-800: #1c2a4a;
+    --text-900: #0e1525;
+    --text-950: #070b13;
+
+    --background-default: #f4f4fb;
+    --background-50: #ececf8;
+    --background-100: #dadaf1;
+    --background-200: #b4b4e4;
+    --background-300: #8f8fd6;
+    --background-400: #6969c9;
+    --background-500: #4444bb;
+    --background-600: #363696;
+    --background-700: #292970;
+    --background-800: #1b1b4b;
+    --background-900: #0e0e25;
+    --background-950: #070713;
+
+    --primary-default: #4968d0;
+    --primary-50: #ebeefa;
+    --primary-100: #d6ddf5;
+    --primary-200: #aebcea;
+    --primary-300: #859ae0;
+    --primary-400: #5d79d5;
+    --primary-500: #3457cb;
+    --primary-600: #2a46a2;
+    --primary-700: #1f347a;
+    --primary-800: #152351;
+    --primary-900: #0a1129;
+    --primary-950: #050914;
+
+    --secondary-default: #8ca3e8;
+    --secondary-50: #eaeefb;
+    --secondary-100: #d4ddf7;
+    --secondary-200: #aabbee;
+    --secondary-300: #7f99e6;
+    --secondary-400: #5577dd;
+    --secondary-500: #2a55d5;
+    --secondary-600: #2244aa;
+    --secondary-700: #193380;
+    --secondary-800: #112255;
+    --secondary-900: #08112b;
+    --secondary-950: #040815;
+
+    --accent-default: #5b7ee6;
+    --accent-50: #e9eefc;
+    --accent-100: #d3dcf8;
+    --accent-200: #a6b9f2;
+    --accent-300: #7a96eb;
+    --accent-400: #4e73e4;
+    --accent-500: #2150de;
+    --accent-600: #1b40b1;
+    --accent-700: #143085;
+    --accent-800: #0d2059;
+    --accent-900: #07102c;
+    --accent-950: #030816;
+  }
+  .dark {
+    --text-default: #e1e7f4;
+    --text-50: #070b13;
+    --text-100: #0e1525;
+    --text-200: #1c2a4a;
+    --text-300: #294070;
+    --text-400: #375595;
+    --text-500: #456aba;
+    --text-600: #6a88c8;
+    --text-700: #8fa6d6;
+    --text-800: #b5c3e3;
+    --text-900: #dae1f1;
+    --text-950: #ecf0f8;
+
+    --background-default: #04040b;
+    --background-50: #070713;
+    --background-100: #0e0e25;
+    --background-200: #1b1b4b;
+    --background-300: #292970;
+    --background-400: #363696;
+    --background-500: #4444bb;
+    --background-600: #6969c9;
+    --background-700: #8f8fd6;
+    --background-800: #b4b4e4;
+    --background-900: #dadaf1;
+    --background-950: #ececf8;
+
+    --primary-default: #2f4fb6;
+    --primary-50: #050914;
+    --primary-100: #0a1129;
+    --primary-200: #152351;
+    --primary-300: #1f347a;
+    --primary-400: #2a46a2;
+    --primary-500: #3457cb;
+    --primary-600: #5d79d5;
+    --primary-700: #859ae0;
+    --primary-800: #aebcea;
+    --primary-900: #d6ddf5;
+    --primary-950: #ebeefa;
+
+    --secondary-default: #172e73;
+    --secondary-50: #040815;
+    --secondary-100: #08112b;
+    --secondary-200: #112255;
+    --secondary-300: #193380;
+    --secondary-400: #2244aa;
+    --secondary-500: #2a55d5;
+    --secondary-600: #5577dd;
+    --secondary-700: #7f99e6;
+    --secondary-800: #aabbee;
+    --secondary-900: #d4ddf7;
+    --secondary-950: #eaeefb;
+
+    --accent-default: #193ba4;
+    --accent-50: #030816;
+    --accent-100: #07102c;
+    --accent-200: #0d2059;
+    --accent-300: #143085;
+    --accent-400: #1b40b1;
+    --accent-500: #2150de;
+    --accent-600: #4e73e4;
+    --accent-700: #7a96eb;
+    --accent-800: #a6b9f2;
+    --accent-900: #d3dcf8;
+    --accent-950: #e9eefc;
+  }
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Montserrat",
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
