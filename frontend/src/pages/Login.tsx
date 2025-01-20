@@ -9,7 +9,7 @@ const Login = () => {
 
   return (
     <div className="flex flex-col p-10 h-full">
-      <div className="flex flex-col mx-auto w-[90%] sm:w-[60%] lg:w-[40%] xl:max-w-[25rem] bg-white px-8 py-8 shadow-lg rounded-lg">
+      <div className="flex flex-col mx-auto w-[90%] sm:w-[60%] lg:w-[40%] xl:max-w-[28rem] bg-white px-8 py-8 shadow-lg rounded-lg">
         <h1 className="text-3xl text-center font-semibold mb-10">Login</h1>
         <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
           <div className="flex flex-col gap-2">
@@ -44,16 +44,24 @@ const Login = () => {
               Forgot password?
             </Link>
           </div>
-          <button className="bg-primary hover:bg-primary-500 w-full text-white rounded p-2 mt-4">
+          <button className="bg-primary hover:bg-primary-500 w-full text-white rounded p-2 mt-2">
             Login
           </button>
+          <div className="flex justify-center">
+            <Link
+              to="/login"
+              className="text-primary-400 hover:text-primary-500"
+            >
+              Don't have an account?
+            </Link>
+          </div>
         </form>
 
         <p className="w-full text-center border-b border-b-text-100 leading-[0.1em] my-12">
           <span className="bg-white px-3 text-text-400">or</span>
         </p>
 
-        <div className="flex flex-col gap-5 mb-10">
+        <div className="flex flex-col gap-5 mb-5">
           <button className="relative flex justify-center items-center bg-white hover:bg-background-50 border border-text-100 w-full text-text rounded p-2">
             <FcGoogle className="absolute left-4" size={23} />
             Continue with Google
