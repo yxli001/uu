@@ -1,10 +1,29 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { FaMicrosoft } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { signinWithGoogle } from "src/lib/auth";
+import { useContext, useEffect } from "react";
+import { UserContext } from "src/context/UserContext/userContext";
 
 const Login = () => {
+  const { firebaseUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (firebaseUser) {
+      // Redirect to home page if user is logged in
+      navigate("/");
+    }
+  }, [firebaseUser, navigate]);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+  };
+
+  const handleGoogleLogin = () => {
+    signinWithGoogle().catch((error) => {
+      console.error(error);
+    });
   };
 
   return (
@@ -62,7 +81,12 @@ const Login = () => {
         </p>
 
         <div className="flex flex-col gap-5 mb-5">
-          <button className="relative flex justify-center items-center bg-white hover:bg-background-50 border border-text-100 w-full text-text rounded p-2">
+          <button
+            className="relative flex justify-center items-center bg-white hover:bg-background-50 border border-text-100 w-full text-text rounded p-2"
+            onClick={() => {
+              handleGoogleLogin();
+            }}
+          >
             <FcGoogle className="absolute left-4" size={23} />
             Continue with Google
           </button>

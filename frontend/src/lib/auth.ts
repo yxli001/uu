@@ -4,12 +4,11 @@ import {
   GoogleAuthProvider,
   AuthError,
   AuthErrorCodes,
-  signInWithRedirect,
+  signInWithPopup,
 } from "firebase/auth";
 import { auth } from "src/lib/firebase";
 
 const googleProvider = new GoogleAuthProvider();
-auth.useDeviceLanguage();
 
 export const signupWithEmail = async (email: string, password: string) => {
   try {
@@ -29,7 +28,7 @@ export const signinWithEmail = async (email: string, password: string) => {
 
 export const signinWithGoogle = async () => {
   try {
-    await signInWithRedirect(auth, googleProvider);
+    await signInWithPopup(auth, googleProvider);
   } catch (error) {
     handleFirebaseAuthError(error as AuthError);
   }
@@ -55,6 +54,12 @@ const handleFirebaseAuthError = (error: AuthError) => {
       break;
     case AuthErrorCodes.INVALID_LOGIN_CREDENTIALS:
       console.log("Invalid credential");
+      break;
+    case AuthErrorCodes.POPUP_CLOSED_BY_USER:
+      console.log("Popup closed by user");
+      break;
+    case AuthErrorCodes.POPUP_BLOCKED:
+      console.log("Popup blocked");
       break;
     default:
       console.log("Unknown error");
