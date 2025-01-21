@@ -11,7 +11,7 @@ async function startServer() {
   try {
     // Connect to Postgres
     const sequelize = new Sequelize({
-      models: [__dirname + "/models"],
+      models: [__dirname + "/models/*.model.ts"],
       dialect: "postgres",
       host: env.POSTGRES_HOST,
       port: env.POSTGRES_PORT,
@@ -29,6 +29,9 @@ async function startServer() {
 
     // Test DB Connection
     await sequelize.authenticate();
+
+    // Sync models with database
+    await sequelize.sync({ alter: true, match: /dev$/ });
 
     console.log("Database connection established.");
 

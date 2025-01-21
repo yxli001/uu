@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { isHttpError } from "http-errors";
+import { ValidationError } from "sequelize";
 
 const errorHandler = (
   error: unknown,
@@ -18,7 +19,12 @@ const errorHandler = (
     statusCode = error.status;
     errorMessage = error.message;
   }
-  // prefer custom http errors but if they don't exist, fallback to default
+  // sequelize validation errors
+  else if (error instanceof ValidationError) {
+    statusCode = 400;
+    errorMessage = error.errors.map((e) => e.message).join(", ");
+  }
+  // prefer custom errors but if they don't exist, fallback to default
   else if (error instanceof Error) {
     errorMessage = error.message;
   }

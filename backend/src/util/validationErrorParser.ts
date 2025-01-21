@@ -12,6 +12,7 @@ const validationErrorParser = (errors: Result<ValidationError>): string => {
   if (!errors.isEmpty()) {
     // parse through errors returned by the validator and append them to the error string
     for (const error of errors.array()) {
+      console.log(error);
       errorString += error.msg + " ";
     }
   }

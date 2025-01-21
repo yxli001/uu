@@ -2,6 +2,7 @@ import "dotenv/config";
 import cors from "cors";
 import express from "express";
 import errorHandler from "src/middlewares/errorHandler";
+import schoolRouter from "./routes/school.routes";
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(
 );
 
 // Routes
+app.use("/api/school", schoolRouter);
 
 /**
  * Error handler; all errors thrown by server are handled here.
