@@ -61,6 +61,12 @@ This section describes various CLI commands to run parts of the project, such as
 2. `npm install` to install any dependencies
 3. `npm run start` to run the frontend
 
+### Bot
+
+1. `cd bot` to enter the bot directory
+2. `npm install` to install any dependencies
+3. `npm run dev` to start the bot
+
 Upon running the frontend (with `npm run start`), you should see a link to open the website.
 
 ### Linting
