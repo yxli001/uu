@@ -19,7 +19,7 @@ This section describes how to get started with development work, including some 
 
 Before running the project, you must configure environment variables for the frontend and backend. Environment variables contain information that may be different between different developers and development vs. production environments, and/or may be sensitive information we don't want to put in our public GitHub repos (e.g. Firebase keys, email account password).
 
-You can find our `.env` file in our Google Drive. Be sure to upload that into your project directory under `backend`.
+You can find `.env.backend`, `.env.frontend`, and `.env.bot` in our Google Drive. Be sure to upload these into your project directory under their corresponding folders and renaming them all to `.env`.
 
 There is also a `ca.pem` in the Google Drive - this is used for connecting to the database, upload this to `backend` as well.
 
@@ -33,6 +33,10 @@ IMPORTANT: make sure you do NOT remove anything from `.gitignore`. The `.gitigno
         -   ca.pem
         -   ...other files/directories
     -   frontend
+        -   .env
+        -   ...other files/directories
+    -   bot
+        -   .env
         -   ...other files/directories
     -   ...other files/directories
 
