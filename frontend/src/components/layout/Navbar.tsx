@@ -7,29 +7,34 @@ const Navbar = () => {
   const { firebaseUser } = useContext(UserContext);
 
   const anonymous = (
-    <div className="flex flex-row gap-6 items-center">
-      <Link to="/login" className="text-l hover:text-primary">
+    <>
+      <Link to="/login" className="text-l text-text hover:text-primary">
         Login
       </Link>
-    </div>
+    </>
   );
 
   const loggedIn = (
-    <div className="flex flex-row gap-6 items-center">
+    <>
       <button className="text-l hover:text-primary" onClick={logout}>
         Logout
       </button>
-    </div>
+    </>
   );
 
   return (
-    <div className="bg-background flex flex-row justify-between shadow-sm shadow-accent-100 px-8 py-5">
+    <div className="bg-background flex flex-row justify-between shadow-sm shadow-accent-200 px-8 py-5">
       <div className="flex items-center">
-        <Link to="/" className="text-3xl font-bold">
+        <Link
+          to="/"
+          className="text-3xl text-text font-bold hover:text-primary"
+        >
           UU
         </Link>
       </div>
-      {!firebaseUser ? anonymous : loggedIn}
+      <div className="flex flex-row gap-6 items-center">
+        {!firebaseUser ? anonymous : loggedIn}
+      </div>
     </div>
   );
 };

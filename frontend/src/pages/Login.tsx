@@ -29,29 +29,31 @@ const Login = () => {
   return (
     <div className="flex flex-col p-10 h-full">
       <div className="flex flex-col mx-auto w-[90%] sm:w-[60%] lg:w-[40%] xl:max-w-[28rem] bg-white px-8 py-8 shadow-lg rounded-lg">
-        <h1 className="text-3xl text-center font-semibold mb-10">Login</h1>
+        <h1 className="text-3xl text-center text-text font-semibold mb-10">
+          Login
+        </h1>
         <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
           <div className="flex flex-col gap-2">
-            <label htmlFor="email" className="">
+            <label htmlFor="email" className="text-text">
               Email address
             </label>
             <input
               type="email"
               name="email"
               id="email"
-              className="border border-text-100 rounded px-2 py-1"
+              className="border border-text-100 text-text-100 rounded px-2 py-1"
               placeholder="example@ucsd.edu"
             />
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="password" className="">
+            <label htmlFor="password" className="text-text">
               Password
             </label>
             <input
               type="password"
               name="password"
               id="password"
-              className="border border-text-100 rounded px-2 py-1"
+              className="border border-text-100 text-text-100 rounded px-2 py-1"
               placeholder="Enter your password"
             />
           </div>
@@ -82,7 +84,7 @@ const Login = () => {
 
         <div className="flex flex-col gap-5 mb-5">
           <button
-            className="relative flex justify-center items-center bg-white hover:bg-background-50 border border-text-100 w-full text-text rounded p-2"
+            className="relative flex justify-center items-center bg-white hover:bg-background-50 border border-text-100 w-full text-black rounded p-2"
             onClick={() => {
               handleGoogleLogin();
             }}
@@ -90,7 +92,7 @@ const Login = () => {
             <FcGoogle className="absolute left-4" size={23} />
             Continue with Google
           </button>
-          <button className="relative flex justify-center items-center bg-text-800 hover:bg-text-900 w-full text-white rounded p-2">
+          <button className="relative flex justify-center items-center bg-primary-800 hover:bg-primary-900 w-full text-white rounded p-2">
             <FaMicrosoft className="absolute left-4" size={20} />
             Continue with Microsoft
           </button>
