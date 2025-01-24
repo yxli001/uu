@@ -1,4 +1,4 @@
-import { body } from "express-validator";
+import { body, param } from "express-validator";
 
 const validateName = body("name")
   .exists()
@@ -20,4 +20,15 @@ const validateDomain = body("domain")
   .matches(/([a-z0-9|-]+\.)*[a-z0-9|-]+\.[a-z]+/)
   .withMessage("Domain must be a valid domain. ");
 
+const validateId = param("id")
+  .exists()
+  .withMessage("ID must be provided. ")
+  .isUUID()
+  .withMessage("ID must be a UUID. ");
+
 export const createSchoolValidator = [validateName, validateDomain];
+export const updateSchoolValidator = [
+  validateId,
+  validateName.optional(),
+  validateDomain.optional(),
+];
