@@ -11,6 +11,7 @@ import {
   Unique,
   AllowNull,
   Default,
+  UpdatedAt,
 } from "sequelize-typescript";
 import User from "src/models/User.model";
 
@@ -33,6 +34,7 @@ type SchoolCreationAttributes = Optional<SchoolAttributes, "id">;
  * @property {string} name - The name of the school
  * @property {string} domain - The domain of the school email, must be unique
  * @property {Date} createdAt - The date and time the school was created, automatically generated
+ * @property {Date} updatedAt - The date and time the school was last updated, automatically generated
  * @property {User[]} users - The users associated with the school
  *
  * @see {@link User}
@@ -62,6 +64,9 @@ class School extends Model<SchoolAttributes, SchoolCreationAttributes> {
 
   @CreatedAt
   createdAt: Date;
+
+  @UpdatedAt
+  updatedAt: Date;
 
   // Relationships
   @HasMany(() => User)

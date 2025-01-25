@@ -12,6 +12,7 @@ import {
   AllowNull,
   Scopes,
   Default,
+  UpdatedAt,
 } from "sequelize-typescript";
 import School from "src/models/School.model";
 
@@ -36,6 +37,7 @@ type UserCreationAttributes = Optional<UserAttributes, "id">;
  * @property {string} email - The email of the user
  * @property {string} schoolId - The unique identifier of the school the user belongs to
  * @property {Date} createdAt - The date and time the user was created, automatically generated
+ * @property {Date} updatedAt - The date and time the user was last updated, automatically generated
  * @property {School} school - The school the user belongs to
  *
  * @see {@link School}
@@ -74,6 +76,9 @@ class User extends Model<UserAttributes, UserCreationAttributes> {
 
   @CreatedAt
   createdAt: Date;
+
+  @UpdatedAt
+  updatedAt: Date;
 
   // Relationships
   @BelongsTo(() => School, "schoolId")
