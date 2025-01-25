@@ -10,9 +10,9 @@ import {
   BelongsTo,
   IsEmail,
   AllowNull,
-  Scopes,
   Default,
   UpdatedAt,
+  DefaultScope,
 } from "sequelize-typescript";
 import School from "src/models/School.model";
 
@@ -42,10 +42,8 @@ type UserCreationAttributes = Optional<UserAttributes, "id">;
  *
  * @see {@link School}
  */
-@Scopes(() => ({
-  default: {
-    include: School,
-  },
+@DefaultScope(() => ({
+  include: School,
 }))
 @Table({
   tableName: "users",
