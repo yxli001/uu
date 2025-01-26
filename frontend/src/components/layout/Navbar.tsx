@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { Link } from "react-router";
 import { UserContext } from "src/context/UserContext/userContext";
+import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import { logout } from "src/lib/auth";
+import { useTheme } from "src/hooks/theme";
 
 const Navbar = () => {
+  const [theme, toggleTheme] = useTheme();
   const { firebaseUser } = useContext(UserContext);
 
   const anonymous = (
@@ -33,6 +36,13 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="flex flex-row gap-6 items-center">
+        <button onClick={toggleTheme}>
+          {theme === "dark" ? (
+            <IoSunnyOutline className="text-3xl text-text" />
+          ) : (
+            <IoMoonOutline className="text-3xl text-text" />
+          )}
+        </button>
         {!firebaseUser ? anonymous : loggedIn}
       </div>
     </div>

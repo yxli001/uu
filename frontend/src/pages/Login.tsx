@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router";
-import { FaMicrosoft } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { signinWithGoogle } from "src/lib/auth";
 import { useContext, useEffect } from "react";
@@ -28,7 +27,7 @@ const Login = () => {
 
   return (
     <div className="flex flex-col p-10 h-full">
-      <div className="flex flex-col mx-auto w-[90%] sm:w-[60%] lg:w-[40%] xl:max-w-[28rem] bg-white px-8 py-8 shadow-lg rounded-lg">
+      <div className="flex flex-col mx-auto w-[90%] sm:w-[60%] lg:w-[40%] xl:max-w-[28rem] bg-foreground px-8 py-8 shadow-lg rounded-lg">
         <h1 className="text-3xl text-center text-text font-semibold mb-10">
           Login
         </h1>
@@ -41,7 +40,7 @@ const Login = () => {
               type="email"
               name="email"
               id="email"
-              className="border border-text-100 text-text-100 rounded px-2 py-1"
+              className="border border-text-300 text-text-100 bg-foreground rounded px-2 py-1"
               placeholder="example@ucsd.edu"
             />
           </div>
@@ -53,7 +52,7 @@ const Login = () => {
               type="password"
               name="password"
               id="password"
-              className="border border-text-100 text-text-100 rounded px-2 py-1"
+              className="border border-text-300 text-text-100 bg-foreground rounded px-2 py-1"
               placeholder="Enter your password"
             />
           </div>
@@ -78,13 +77,13 @@ const Login = () => {
           </div>
         </form>
 
-        <p className="w-full text-center border-b border-b-text-100 leading-[0.1em] my-8">
-          <span className="bg-white px-3 text-text-400">or</span>
+        <p className="w-full text-center border-b border-b-text-100 leading-[0.15em] my-8">
+          <span className="bg-foreground px-3 text-text-300">or</span>
         </p>
 
         <div className="flex flex-col gap-5 mb-5">
           <button
-            className="relative flex justify-center items-center bg-white hover:bg-background-50 border border-text-100 w-full text-black rounded p-2"
+            className="relative flex justify-center items-center bg-foreground hover:bg-background border border-text-300 w-full text-text rounded p-2"
             onClick={() => {
               handleGoogleLogin();
             }}
@@ -92,10 +91,10 @@ const Login = () => {
             <FcGoogle className="absolute left-4" size={23} />
             Continue with Google
           </button>
-          <button className="relative flex justify-center items-center bg-primary-800 hover:bg-primary-900 w-full text-white rounded p-2">
+          {/* <button className="relative flex justify-center items-center bg-primary w-full text-white rounded p-2">
             <FaMicrosoft className="absolute left-4" size={20} />
             Continue with Microsoft
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

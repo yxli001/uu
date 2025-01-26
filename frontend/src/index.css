@@ -30,6 +30,8 @@
     --background-900: #0e0e25;
     --background-950: #070713;
 
+    --foreground-default: white;
+
     --primary-default: #4968d0;
     --primary-50: #ebeefa;
     --primary-100: #d6ddf5;
@@ -95,6 +97,8 @@
     --background-800: #b4b4e4;
     --background-900: #dadaf1;
     --background-950: #ececf8;
+
+    --foreground-default: #0b111e;
 
     --primary-default: #2f4fb6;
     --primary-50: #050914;
