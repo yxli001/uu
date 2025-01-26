@@ -9,10 +9,12 @@ export const useTheme = (): [
   theme: "light" | "dark",
   toggleTheme: () => void,
 ] => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark" | null>(null);
 
   useEffect(() => {
     const localTheme = localStorage.getItem("theme") as "light" | "dark";
+
+    console.log(localTheme);
 
     if (localTheme) {
       setTheme(localTheme);
@@ -20,7 +22,6 @@ export const useTheme = (): [
       const prefersDarkMode = window.matchMedia(
         "(prefers-color-scheme: dark)",
       ).matches;
-
       if (prefersDarkMode) {
         setTheme("dark");
       }
@@ -28,13 +29,15 @@ export const useTheme = (): [
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("theme", theme);
+    if (!theme) return;
+
+    localStorage.setItem("theme", theme!);
     document.documentElement.classList.remove("light", "dark");
-    document.documentElement.classList.add(theme);
+    document.documentElement.classList.add(theme!);
   }, [theme]);
 
   return [
-    theme,
+    theme!,
     () => {
       setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
     },
