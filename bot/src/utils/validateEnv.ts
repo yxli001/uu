@@ -7,6 +7,6 @@ import { cleanEnv } from "envalid";
 import { url, str } from "envalid/dist/validators";
 
 export default cleanEnv(process.env, {
-    API_ORIGIN: url(),
-    DISCORD_TOKEN: str(),
+  API_ORIGIN: url(),
+  DISCORD_TOKEN: str(),
 });
