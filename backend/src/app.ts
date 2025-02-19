@@ -29,4 +29,6 @@ app.use("/api/school", schoolRouter);
  */
 app.use(errorHandler);
 
+// I am jonathan
+
 export default app;
